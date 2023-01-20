@@ -31,11 +31,9 @@ prob = "None"
 ###############################################
 # Azure Custom Visionポータル -> Performance -> Prediction URL より取得可能
 # ※ENDPOINTとKEYは外部に公開しないでください※
-# DET_ENDPOINT = "https://congnitive-services-test.cognitiveservices.azure.com/customvision/v3.0/Prediction/dfb4f449-224f-4549-915b-f02b2a40010e/classify/iterations/food2/image"
-# DET_KEY = "94b862a6012e4563843eae033d1514bf"
 
-DET_ENDPOINT = "https://foodteamc-prediction.cognitiveservices.azure.com/customvision/v3.0/Prediction/e78564bd-6599-4090-9050-9ec3a2c42a7c/detect/iterations/Iteration2/image"
-DET_KEY = "c9fedd66297749f996942e5dea71aa2d"
+DET_ENDPOINT = "任意の値"
+DET_KEY = "任意の値"
 
 # CAMERA_NUM = 1   # 0:内蔵カメラ 1:USBカメラ
 
