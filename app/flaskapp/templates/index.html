@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="jp" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Azure-betio-system</title>
+
+    <style type="text/css">
+        #sakurabox {
+            font-weight: bold;
+            font-size: 30px;
+            color: #364e96;
+            /*文字色*/
+            border: solid 3px #364e96;
+            /*線色*/
+            padding: 0.5em;
+            /*文字周りの余白*/
+            border-radius: 0.5em;
+            /*角丸*/
+            left: 50%;
+            text-align: center;
+        }
+
+        #tag,
+        #prob {
+            font-weight: bold;
+            font-size: 35px;
+            /* position: absolute;
+            left: 5%;
+            top: 30%; */
+            /* position: absolute; */
+            /* left: 10%; */
+            /* top: 30%; */
+            /* margin-right: -50%; */
+            /* transform: translate(-50%, -50%) */
+        }
+
+        .button {
+            /* position: absolute;
+            top: 20%;
+            left: 2%; */
+            width: 300px;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid #68779a;
+            background: #06e2f6;
+            border-radius: 0.5em;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 30px;
+        }
+
+        .value {
+            position: absolute;
+            top: 30%;
+            left: 5%;
+            /* margin-right: -50%;
+            transform: translate(-50%, -50%) */
+        }
+
+        .button-position {
+            position: absolute;
+            top: 20%;
+            left: 4%;
+        }
+
+        .container {
+            /* background-color: #ccc;
+            font-size: 24px;
+            margin: 25px;
+            width: 350px;
+            height: 200px;
+            outline: dashed 1px black; */
+
+            margin: 0;
+            background: yellow;
+            position: absolute;
+            top: 30%;
+            left: 50%;
+            margin-right: -50%;
+            transform: translate(-50%, -50%)
+        }
+
+        #img {
+            margin: 0;
+            background: yellow;
+            position: absolute;
+            top: 75%;
+            left: 50%;
+            margin-right: -50%;
+            transform: translate(-50%, -50%)
+        }
+
+        #table {
+            text-align: center;
+            background-color: #fff;
+            display: inline-block;
+            font-weight: bold;
+            font-size: 40px;
+            /* text-shadow: 1px 2px 3px #808080 */
+        }
+
+
+        #table-1,
+        #table-2 {
+            display: table-cell;
+            text-align: center;
+            border: solid 3px #000000;
+            background-color: #ccc;
+            width: 300px;
+            height: 50px;
+            /* margin: 10px; */
+            background-color: #ccc;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- {{tag}} -->
+    <p id="sakurabox">
+        中間バッシングや！！！
+    </p>
+    <div class="value">
+        table_number:
+        <div id="tag">{{ table_number }}</div>
+        table-1_plates:
+        <div id="prob">{{ left_plates }}枚</div>
+        table-2_plates:
+        <div id="prob">{{ right_plates }}枚</div>
+        table-1_smile:
+        <div id="prob">{{ smile_left }}人</div>
+        table-2_smile:
+        <div id="prob">{{ smile_right }}人</div>
+    </div>
+
+    <br>
+    <!-- <br> -->
+
+    <form method="POST" class="button-position">
+        <button type=“button” name="detection" class="button">バッシング判定</button>
+    </form>
+    <!-- <div id="b">aaa</div> -->
+
+    <br>
+    <br>
+
+    <div class="container" id="table">
+        <p>テーブル "{{table_number}}" へLet's GO!!</p>
+        <div id="table-1">
+            <p>テーブル①</p>
+        </div>
+        <div id="table-2">
+            <p>テーブル②</p>
+        </div>
+    </div>
+
+
+    <div id="Empty"></div>
+
+    <p><img src="{{filepath}}" width="640" height="380" class="container" id="img"></p>
+
+
+    <script>
+        window.onload = function () {
+            // id = tag のテキストを取得
+            var tag_name = document.getElementById("tag").textContent;
+            console.log(tag_name);
+            // console.log('banana' === a);
+            if (tag_name == '1') {
+                console.log('True')
+                // // id = b の内容を　a で上書き
+                // document.getElementById("b").innerHTML = tag_name;
+                // id = table-1 の背景を赤色に変更
+                document.getElementById("table-1").style.backgroundColor = '#ff0000';
+            }
+            if (tag_name == '2') {
+                console.log('True')
+                // id = table-1 の背景を赤色に変更
+                document.getElementById("table-2").style.backgroundColor = '#ff0000';
+            }
+            if (tag_name == '12') {
+                console.log('True')
+                // id = table-1 の背景を赤色に変更
+                document.getElementById("table-1").style.backgroundColor = '#ff0000';
+                document.getElementById("table-2").style.backgroundColor = '#ff0000';
+            }
+        }
+        // var a = document.getElementById("a").tag;
+        // var a = "banana";
+        // console.log(a);
+        // console.log('banana' === a);
+        // if (a == 'banana') {
+        //     document.getElementById("b").innerHTML = a;
+        // }
+    </script>
+
+    <!-- <button type=“button” onclick="location.href='http://172.20.1.4/raspi'">推論！</button> -->
+</body>
+
+</html>

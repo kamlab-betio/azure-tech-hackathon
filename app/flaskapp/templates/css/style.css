@@ -1,0 +1,12 @@
+.sakurabox {
+    border:1px dashed gray;   /* 枠線 */
+    border-radius:10em;        /* 角丸 */
+    background-color:#ccffcc; /* 背景色 */
+}
+
+div {
+	color: #006DD9;
+	width: 400px;
+	height: 100px;
+	background-color: #aaa;
+}

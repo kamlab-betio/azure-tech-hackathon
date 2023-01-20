@@ -1,0 +1,6 @@
+flask==2.0.1
+uWSGI==2.0.19.1
+requests
+numpy
+opencv-python
+Pillow
