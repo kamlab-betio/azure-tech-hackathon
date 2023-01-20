@@ -23,10 +23,7 @@ def index():
     #     if request.form['detection'] :
     #         print("request.form['detection']")
     try:
-        # response = requests.get('http://192.168.1.32/raspi')
-        # response = requests.get('http://172.20.1.4/raspi')
-        response = requests.get('https://cd58-153-156-88-35.ngrok.io/raspi')
-        # response = requests.get('http://azure-pi.local/raspi')
+        response = requests.get('任意の値')
     # sys.stdout.write(response)
     # Left_count, Right_count, Smile_left, Smile_right, img_as_text
         print(response)
